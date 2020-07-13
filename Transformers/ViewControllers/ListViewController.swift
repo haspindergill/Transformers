@@ -95,34 +95,34 @@ class ListViewController: UIViewController {
 extension ListViewController {
     
     private func getTransformers() {
-        APIManager.sharedInstance.opertationWithRequest(withApi: API.GetTransformers) { (response) in
+        APIManager.sharedInstance.opertationWithRequest(withApi: API.GetTransformers) { [weak self] (response) in
             switch response {
             case .Success(let transformers):
                 guard let transformers = transformers as? Transformers else {
                     return
                 }
-                self.items = transformers.transformers as [AnyObject]
+                self?.items = transformers.transformers as [AnyObject]
                 DispatchQueue.main.async {
-                    self.tableView?.reloadData()
-                    if self.items.count == 0 {
-                        self.tableView.isHidden = true
+                    self?.tableView?.reloadData()
+                    if self?.items.count == 0 {
+                        self?.tableView.isHidden = true
                     } else {
-                        self.tableView.isHidden = false
+                        self?.tableView.isHidden = false
                     }
                 }
             case .Failure(let error):
-                self.showAlert(message: error ?? "")
+                self?.showAlert(message: error ?? "")
             }
         }
     }
     
     
     private func deleteTransformer(id: String) {
-        APIManager.sharedInstance.opertationWithRequest(withApi: API.DeleteTransformer(transformerID: id)) { (response) in
+        APIManager.sharedInstance.opertationWithRequest(withApi: API.DeleteTransformer(transformerID: id)) { [weak self] (response) in
             switch response {
             case .Success(_): break
             case .Failure(let error):
-                self.showAlert(message: error ?? "")
+                self?.showAlert(message: error ?? "")
             }
         }
     }

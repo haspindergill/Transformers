@@ -26,7 +26,7 @@ class StartViewController: UIViewController {
     // MARK: - API
 
     private func fetchToken() {
-        APIManager.sharedInstance.opertationWithRequest(withApi: API.AllSpark) { (APIResponse) in
+        APIManager.sharedInstance.opertationWithRequest(withApi: API.AllSpark) { [weak self] (APIResponse) in
             switch APIResponse {
             case .Success(let response):
                 guard let token = response as? String else {
@@ -34,13 +34,12 @@ class StartViewController: UIViewController {
                 }
                 let _ = KeyChain.save(key: "token", data: token.data(using: .utf8) ?? Data())
                 DispatchQueue.main.async {
-                    self.presentVC()
+                    self?.presentVC()
                 }
                 print("Response: \(token)")
             case .Failure(let error):
                 print("Error: \(error ?? "")")
             }
-            print(APIResponse)
         }
     }
     

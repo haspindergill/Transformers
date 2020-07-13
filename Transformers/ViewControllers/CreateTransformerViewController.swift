@@ -143,12 +143,10 @@ extension CreateTransformerViewController {
     
     private func createTransformerAtServer() {
         guard let currentInvade = currentInvade else { return }
-        DispatchQueue.main.sync {
-            self.showInternetActivity()
-        }
-        APIManager.sharedInstance.opertationWithRequest(withApi: API.CreateTransformer(transformer: currentInvade)) { (result) in
+        self.showInternetActivity()
+        APIManager.sharedInstance.opertationWithRequest(withApi: API.CreateTransformer(transformer: currentInvade)) { [weak self] (result) in
             DispatchQueue.main.sync {
-                self.hideInternetActivity()
+                self?.hideInternetActivity()
             }
             switch result {
             case .Success(let response):
@@ -158,10 +156,10 @@ extension CreateTransformerViewController {
                 invade.teamIcon = ""
                 DispatchQueue.main.async {
                     DataManager.sharedInstance.storeTransformerInDatabase(transformers: [invade])
-                    self.navigationController?.popViewController(animated: true)
+                    self?.navigationController?.popViewController(animated: true)
                 }
             case .Failure(let error):
-                self.showAlert(message: error ?? "")
+                self?.showAlert(message: error ?? "")
                 print("Error: \(error ?? "")")
             }
         }
@@ -170,9 +168,9 @@ extension CreateTransformerViewController {
     private func updateTransformer() {
         guard let currentInvade = currentInvade else { return }
         self.showInternetActivity()
-        APIManager.sharedInstance.opertationWithRequest(withApi: API.EditTransformer(transformer: currentInvade)) { (result) in
+        APIManager.sharedInstance.opertationWithRequest(withApi: API.EditTransformer(transformer: currentInvade)) { [weak self] (result) in
             DispatchQueue.main.sync {
-                self.hideInternetActivity()
+                self?.hideInternetActivity()
             }
             switch result {
             case .Success(let response):
@@ -181,11 +179,11 @@ extension CreateTransformerViewController {
                 }
                 DataManager.sharedInstance.updateTransformer(transformer: invade)
                 DispatchQueue.main.async {
-                    self.navigationController?.popViewController(animated: true)
-                    self.showAlert(title: "Success", message: "Succesfully updated!!!")
+                    self?.showAlert(title: "Success", message: "Succesfully updated!!!")
+                    self?.navigationController?.popViewController(animated: true)
                 }
             case .Failure(let error):
-                self.showAlert(message: error ?? "")
+                self?.showAlert(message: error ?? "")
             }
         }
     }
