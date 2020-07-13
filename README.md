@@ -8,10 +8,10 @@ Initally we assume there is no auth token in keychain, therefore we add startVie
 ListViewController list all the transformers into list.
  
 #### Create Functionality:
-Click "+" button in upper navigation to add new transformer
+Click "+" button in upper navigation to add new transformer, it opens up view where we can set values and create a new transformer
 
 #### Delete Functionality:
-Swipe to left to delete any transformer
+Swipe to left to delete any transformer, this action delete that particular from core data as well from firebase
 
 #### Edit Functionality:
-Click any transformer into list
+Click any transformer into list, it will took to view with prefilled values where we can change any value and update the transformer
