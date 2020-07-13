@@ -244,7 +244,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Transformers" largeTitleDisplayMode="never" id="jea-nJ-eqP">
-                        <barButtonItem key="leftBarButtonItem" title="War" id="2V2-LD-h6p">
+                        <barButtonItem key="leftBarButtonItem" title="Battle" id="2V2-LD-h6p">
                             <connections>
                                 <action selector="warAction:" destination="BYZ-38-t0r" id="xBb-Xc-6X4"/>
                             </connections>
@@ -294,6 +294,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="K3F-N6-M2D"/>
                                                 </constraints>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                 <connections>

@@ -21,4 +21,23 @@ extension UIViewController {
         }
     }
     
+    
+   func showInternetActivity() {
+       if let activity = self.view.viewWithTag(9999) {
+           self.view.bringSubviewToFront(activity)
+           return
+       }
+       let internetActivity = InternetActivity(frame: UIScreen.main.bounds)
+       internetActivity.tag = 9999
+       UIView.transition(with: self.view, duration: 0.3, options: .transitionCrossDissolve, animations: {
+           self.view.addSubview(internetActivity)
+       }, completion: nil)
+   }
+   
+   func hideInternetActivity() {
+       if let activity = self.view.viewWithTag(9999) {
+           activity.removeFromSuperview()
+       }
+   }
+    
 }

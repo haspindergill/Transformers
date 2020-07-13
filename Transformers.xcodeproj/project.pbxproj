@@ -35,6 +35,8 @@
 		76F8B30B24BBED7B001BEEBD /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8B30A24BBED7B001BEEBD /* Battle.swift */; };
 		76F8B30D24BC0EFF001BEEBD /* DatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8B30C24BC0EFF001BEEBD /* DatabaseTests.swift */; };
 		76F8B30F24BC1236001BEEBD /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8B30E24BC1236001BEEBD /* APITests.swift */; };
+		76F8B31524BD0677001BEEBD /* InternetActivity.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F8B31324BD0676001BEEBD /* InternetActivity.xib */; };
+		76F8B31624BD0677001BEEBD /* InternetActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8B31424BD0676001BEEBD /* InternetActivity.swift */; };
 		C19F1A96ACF1EF0761B005B5 /* Pods_TransformersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0462E28A3854016908422C /* Pods_TransformersTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,8 @@
 		76F8B30A24BBED7B001BEEBD /* Battle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 		76F8B30C24BC0EFF001BEEBD /* DatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTests.swift; sourceTree = "<group>"; };
 		76F8B30E24BC1236001BEEBD /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		76F8B31324BD0676001BEEBD /* InternetActivity.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InternetActivity.xib; sourceTree = "<group>"; };
+		76F8B31424BD0676001BEEBD /* InternetActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetActivity.swift; sourceTree = "<group>"; };
 		7CC5976267A69D7DB70FB156 /* Pods-TransformersTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransformersTests.release.xcconfig"; path = "Target Support Files/Pods-TransformersTests/Pods-TransformersTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B82A43AD136F809F5AEDA6E /* Pods-Transformers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transformers.release.xcconfig"; path = "Target Support Files/Pods-Transformers/Pods-Transformers.release.xcconfig"; sourceTree = "<group>"; };
 		BB58B1EADED085B0A5AD985F /* Pods_Transformers_TransformersUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Transformers_TransformersUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				76F8B27324B8266E001BEEBD /* Cells */,
+				76F8B31424BD0676001BEEBD /* InternetActivity.swift */,
+				76F8B31324BD0676001BEEBD /* InternetActivity.xib */,
 				76F8B22E24B6B491001BEEBD /* Main.storyboard */,
 				76F8B23324B6B493001BEEBD /* LaunchScreen.storyboard */,
 			);
@@ -422,6 +428,7 @@
 				76F8B23524B6B493001BEEBD /* LaunchScreen.storyboard in Resources */,
 				76F8B23224B6B493001BEEBD /* Assets.xcassets in Resources */,
 				76F8B23024B6B491001BEEBD /* Main.storyboard in Resources */,
+				76F8B31524BD0677001BEEBD /* InternetActivity.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +575,7 @@
 				76F8B26824B7AD2C001BEEBD /* APIResponse.swift in Sources */,
 				76F8B30B24BBED7B001BEEBD /* Battle.swift in Sources */,
 				76F8B30724BBAB46001BEEBD /* Keychain.swift in Sources */,
+				76F8B31624BD0677001BEEBD /* InternetActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

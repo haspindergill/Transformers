@@ -143,7 +143,13 @@ extension CreateTransformerViewController {
     
     private func createTransformerAtServer() {
         guard let currentInvade = currentInvade else { return }
+        DispatchQueue.main.sync {
+            self.showInternetActivity()
+        }
         APIManager.sharedInstance.opertationWithRequest(withApi: API.CreateTransformer(transformer: currentInvade)) { (result) in
+            DispatchQueue.main.sync {
+                self.hideInternetActivity()
+            }
             switch result {
             case .Success(let response):
                 guard var invade = response as? Transformer else {
@@ -163,7 +169,11 @@ extension CreateTransformerViewController {
     
     private func updateTransformer() {
         guard let currentInvade = currentInvade else { return }
+        self.showInternetActivity()
         APIManager.sharedInstance.opertationWithRequest(withApi: API.EditTransformer(transformer: currentInvade)) { (result) in
+            DispatchQueue.main.sync {
+                self.hideInternetActivity()
+            }
             switch result {
             case .Success(let response):
                 guard let invade = response as? Transformer else {
