@@ -50,6 +50,7 @@ class DataManager {
             let result = try DatabaseHelper.getContext().fetch(fetchRequest)
             for object in result {
                 DatabaseHelper.getContext().delete(object)
+                try DatabaseHelper.getContext().save()
             }
         } catch {
             print ("error: \(error)")
