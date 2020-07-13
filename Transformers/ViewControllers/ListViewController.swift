@@ -70,7 +70,7 @@ class ListViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func warAction(_ sender: Any) {
-        guard let items = items as? [Transformer] else { return }
+        guard let items = items as? [Transformer], items.count > 0 else { return }
         let result = battle.battle(list: items)
         switch result {
         case .GameEnd:
