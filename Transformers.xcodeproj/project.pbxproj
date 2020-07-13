@@ -327,7 +327,6 @@
 				76F8B22124B6B491001BEEBD /* Sources */,
 				76F8B22224B6B491001BEEBD /* Frameworks */,
 				76F8B22324B6B491001BEEBD /* Resources */,
-				8ADFC8C039568D4A735A48C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,7 +364,6 @@
 				76F8B24224B6B493001BEEBD /* Sources */,
 				76F8B24324B6B493001BEEBD /* Frameworks */,
 				76F8B24424B6B493001BEEBD /* Resources */,
-				52B68EF866BEC7F02A4FC6D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -469,40 +467,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		52B68EF866BEC7F02A4FC6D6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Transformers-TransformersUITests/Pods-Transformers-TransformersUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Transformers-TransformersUITests/Pods-Transformers-TransformersUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Transformers-TransformersUITests/Pods-Transformers-TransformersUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8ADFC8C039568D4A735A48C6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Transformers/Pods-Transformers-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Transformers/Pods-Transformers-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Transformers/Pods-Transformers-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		96F48D7D2C635C6C451A104E /* [CP] Check Pods Manifest.lock */ = {
