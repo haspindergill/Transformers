@@ -29,8 +29,10 @@ class CreateTransformerViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         if editableInvade ?? false {
+            //Update transformer
             self.setupView()
         } else {
+            //Create new transformer
             currentInvade = Transformer(courage: 5,
                                         endurance: 5,
                                         firepower: 5,
@@ -48,6 +50,7 @@ class CreateTransformerViewController: UIViewController {
     // MARK: - Private
 
     private func setupView() {
+        //Fill up view with previous values in order to edit transformer
         self.submitButton.setTitle("Update", for: .normal)
         self.nameTxt.text = self.currentInvade?.name
         self.teamSegmentControl.selectedSegmentIndex = self.currentInvade?.team == "A" ? 0 : 1

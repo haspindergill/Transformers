@@ -22,6 +22,10 @@ enum Result {
     case TeamD(numberOfBattles: Int,aTeamSurvivors: [String],dTeamSurvivors: [String])
 }
 
+
+// aTeam refers to Autobots
+// dTeam refers to decepticons
+
 class Battle {
     
     var battles = 0
@@ -46,7 +50,7 @@ class Battle {
             let dTeamInvade = dTeam[index]
             self.battles += 1
 
-            //Following condition reflects a special rule if any special Transformer face each , it results into game end
+            //Following condition reflects a special rule if any Transformer with special name face each other, it results into game end
             if specialTransformers.contains(aTeamInvade.name) && specialTransformers.contains(dTeamInvade.name)  {
                 return .GameEnd
             }
@@ -61,7 +65,7 @@ class Battle {
             }
         }
         
-        
+        // Conditions to check which team kills most
         if (aTeam.count - autoBotSurvivors.count) == (dTeam.count - decepticonsSurvivors.count) {
             return .GameTie(numberOfBattles: battles)
         } else if (aTeam.count - autoBotSurvivors.count) < (dTeam.count - decepticonsSurvivors.count){
@@ -76,33 +80,45 @@ class Battle {
     
     // Following Method calcultes winner of each faceoff
     func calculateWinner(aTeamInvade: Transformer, dTeamInvade: Transformer) -> Winner{
-        
+    
         if specialTransformers.contains(aTeamInvade.name) {
+            //if autobots transformer has special name it wins automatically irrespective of all other criteria
             return .TeamA
         } else if specialTransformers.contains(dTeamInvade.name) {
+            //if decepticons transformer has special name it wins automatically irrespective of all other criteria
             return .TeamD
         }
         else if (aTeamInvade.courage - dTeamInvade.courage) >= 4 &&  (aTeamInvade.strength - dTeamInvade.strength) >= 3 {
+            //if autobots transformer has courage equal or more than 4 and strength eqaul or more than 3 as compared to it's opponents it wins automatically irrespective of all other criteria
             return .TeamA
                 
         } else if (dTeamInvade.courage - aTeamInvade.courage) >= 4 &&  (dTeamInvade.strength - aTeamInvade.strength) >= 3 {
+            //if decepticons transformer has courage equal or more than 4 and strength eqaul or more than 3 as compared to it's opponents it wins automatically irrespective of all other criteria
             return .TeamD
         }
         else if abs(aTeamInvade.skill - dTeamInvade.skill) >= 3 {
             if aTeamInvade.skill > dTeamInvade.skill {
+                //if autobots transformer has skill equal or more than 3 as compared to it's opponents it wins automatically irrespective of all other criteria
                 return .TeamA
             } else {
+                //if decepticons transformer has skill equal or more than 3 as compared to it's opponents it wins automatically irrespective of all other criteria
                 return .TeamD
             }
         } else {
-                //Overall Rating = Strength + Intelligence + Speed + Endurance + Firepower
+                //Calculate Overall Rating = Strength + Intelligence + Speed + Endurance + Firepower
             let aTeamInvadeOverallrating = aTeamInvade.strength + aTeamInvade.intelligence + aTeamInvade.speed + aTeamInvade.endurance + aTeamInvade.firepower
+            
             let dTeamInvadeOverallrating = dTeamInvade.strength + dTeamInvade.intelligence + dTeamInvade.speed + dTeamInvade.endurance + dTeamInvade.firepower
+            
+            
             if aTeamInvadeOverallrating > dTeamInvadeOverallrating {
+                //if autobots transformer has overall rating more than it's opponents it wins automatically irrespective of all other criteria
                 return .TeamA
             } else if aTeamInvadeOverallrating < dTeamInvadeOverallrating{
+                //if decepticons transformer has overall rating more than it's opponents it wins automatically irrespective of all other criteria
                 return .TeamD
             } else {
+                //If any of other condition isn't satisfy then face-off results in tie
                 return .Tie
             }
         }
